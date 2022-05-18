@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends 'demoapp/base.html' %}
+<html lang="en">
+<body>
+    {% block body %}
+        <a href="{% url 'index' %}"><img src="https://img.icons8.com/ios-filled/40/000000/back.png"/>Back</a>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="{{book.book_image.url}}" width="350" height="500">
+                </div>
+                <div class="col-md-6">
+                    <h2>Book Title: {{book.name}}</h2>
+                    <h4>Book's Author: {{book.author}}</h4>
+                    <h6>Description: {{book.desc}}</h6>
+                    <h5>Price: ${{book.price}}</h5>
+                    <a href="{% url 'update' book.id %}">
+                        <button class="btn btn-success">Edit</button>
+                    </a>
+                    <a href="{% url 'delete' book.id %}">
+                        <button class="btn btn-danger">Delete</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+</body>
+</html>

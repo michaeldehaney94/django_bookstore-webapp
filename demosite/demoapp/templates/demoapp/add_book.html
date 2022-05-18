@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends 'demoapp/base.html' %}
+<html lang="en">
+<head>
+    <title></title>
+</head>
+<body>
+    {% block body %}
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="name" id="name" placeholder="Enter book title">
+        <input type="text" name="author" id="author" placeholder="Enter the name of author">
+        <input type="text" name="desc" id="desc" placeholder="Enter book description">
+        <input type="text" name="price" id="price" placeholder="Enter book price">
+        <input type="file" name="book_image" id="book_image">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    {% endblock %}
+</body>
+</html>
